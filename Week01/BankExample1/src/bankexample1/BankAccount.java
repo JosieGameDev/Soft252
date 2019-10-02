@@ -42,7 +42,11 @@ public class BankAccount {
     {
         return holder;
     }
-    public void setOverdraft(int newOverdraft)
+    public double getOverdraft()
+    {
+        return overdraft;
+    }
+    public void setOverdraft(double newOverdraft)
     {
         this.overdraft = newOverdraft;
     }
