@@ -6,6 +6,7 @@
 package bankgui;
 
 import bankexample1.BankAccount;
+import javax.swing.JOptionPane;
 /**
  *
  * @author jwood20
@@ -208,14 +209,33 @@ public class Banking extends javax.swing.JFrame {
 
     private void btnDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositActionPerformed
         // TODO add your handling code here:
+        try
+        {
         ba.depositMoney(Integer.valueOf(txtAmount.getText()));
         txtBalance.setText("" + ba.getBalance());
+        txtAmount.setText("");
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only", "Error in amount", JOptionPane.ERROR_MESSAGE);
+        }
+                
+                    
+                
     }//GEN-LAST:event_btnDepositActionPerformed
 
     private void btnWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawActionPerformed
         // TODO add your handling code here:
+        try
+        {
         ba.withdrawMoney(Integer.valueOf(txtAmount.getText()));
         txtBalance.setText("" + ba.getBalance());
+        txtAmount.setText("");
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only", "Error in amount", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnWithdrawActionPerformed
 
     /**
