@@ -9,18 +9,13 @@ package example1;
  *
  * @author jwood20
  */
-public class Example1 {
+public class MyHeight {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        System.out.println("Hello World!" + 22+ true);
-        //System.out.println(22);
-        //System.out.println(true);
-        System.exit(0);
     }
     
 }
