@@ -121,7 +121,45 @@ public class StageResultsTest {
     @Test
     public void testCalculateAverageSoFar()
     {
-         fail("Test not yet implemented");
+         //fail("Test not yet implemented");
+        System.out.println("Testing CalculateAverageSoFar");
+        
+        //check empty
+        assertEquals("empty object", 0.0, empty.calculateAverageSoFar(), 1.0);
+        
+        //check full
+        assertEquals("full object", 50.0, full.calculateAverageSoFar(), 1.0);
+        
+        //check full when marks are 100%
+        full.resetValues();
+        full.addModuleMark(120, 100.0);
+        assertEquals("full object", 100.0, full.calculateAverageSoFar(), 1.0);
+        
+        //check full with 43.92%
+        full.resetValues();
+        full.addModuleMark(120, 43.92);
+        assertEquals("full object", 43.92, full.calculateAverageSoFar(), 1.0);
+        
+        //reset full to original
+        full.resetValues();
+        full.addModuleMark(120, 50.0);
+        
+        //test half full
+        assertEquals("halfFull object", 50.0, halfFull.calculateAverageSoFar(), 1.0);
+        
+        //test half full at 100% 
+        halfFull.resetValues();
+        halfFull.addModuleMark(120, 100.0);
+        assertEquals("halfFull object", 100.0, halfFull.calculateAverageSoFar(), 1.0);
+        
+        // test half full at 64.77
+        halfFull.resetValues();
+        halfFull.addModuleMark(60, 64.77);
+        assertEquals("halfFull object", 64.77, halfFull.calculateAverageSoFar(), 1.0);
+        
+        //reset half full object
+        halfFull.resetValues();
+        halfFull.addModuleMark(60, 50.0);
     }
     
     @Test
