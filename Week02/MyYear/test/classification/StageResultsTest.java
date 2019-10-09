@@ -61,7 +61,7 @@ public class StageResultsTest {
     public void testIsComplte()
     {
         //fail("Test not yet implemented");
-        System.out.println("Testing is Complete");
+        System.out.println("Testing isComplete");
         
         //check that empty obkect is 'not complete'
         assertFalse("empty object", empty.isComplete());
@@ -72,7 +72,23 @@ public class StageResultsTest {
     @Test
     public void testResetValues()
     {
-         fail("Test not yet implemented");
+         //fail("Test not yet implemented");
+        System.out.println("Testing ResetValues");
+        
+        full.resetValues();
+        
+        //set expected results
+        int expIntResult = 0;
+        double expDoubleResult = 0.0;
+        
+        //compare to check it worked as expected
+        assertEquals("credits", expIntResult, full.getTotalCredits());
+        assertEquals("total", expDoubleResult, full.getTotalMarks(), 0.0);
+        
+        //return full object back 
+        full.addModuleMark(120, 50.0);
+        
+        
     }
     
     @Test
