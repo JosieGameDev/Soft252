@@ -61,5 +61,11 @@ public class StageResults {
         stage2Average = 0.0;
     }
     
+    public void addModuleMark(int credits, double mark)
+    {
+        totalCredits += credits;
+        totalMarks += mark * (credits / 10);
+    }
+    
     
 }
