@@ -94,7 +94,28 @@ public class StageResultsTest {
     @Test
     public void testAddModuleMark()
     {
-         fail("Test not yet implemented");
+         //fail("Test not yet implemented");
+        System.out.println("Testing addModuleMark");
+        
+        //testing using the empty object
+        int expIntResult1 = 10;
+        double expDouResult1 = 5.0;
+        int expIntResult2 = 30;
+        double expDouResult2 = 15.0;
+        int expIntResult3 = 70;
+        double expDouResult3 = 35.0;
+        
+        empty.addModuleMark(10, 5);
+        assertEquals("empty object", expIntResult1, empty.getTotalCredits());
+        assertEquals("empty object", expDouResult1, empty.getTotalMarks(), 0.0);
+        empty.addModuleMark(20, 5);
+        assertEquals("empty object", expIntResult2, empty.getTotalCredits());
+        assertEquals("empty object", expDouResult2, empty.getTotalMarks(), 0.0);
+        empty.addModuleMark(40, 5);
+        assertEquals("empty object", expIntResult3, empty.getTotalCredits());
+        assertEquals("empty object", expDouResult3, empty.getTotalMarks(), 0.0);
+        
+        empty.resetValues();
     }
     
     @Test
