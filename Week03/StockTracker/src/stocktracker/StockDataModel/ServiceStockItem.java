@@ -21,4 +21,12 @@ public class ServiceStockItem extends StockItem
         this.name = name;
         this.quantityInStock = qty;
     }
+
+    @Override
+    public Boolean isInStock() {
+        //return super.isInStock(); //To change body of generated methods, choose Tools | Templates.
+        return true;
+    }
+    
+    
 }
