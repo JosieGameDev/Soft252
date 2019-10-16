@@ -11,10 +11,10 @@ package stocktracker.StockDataModel;
  */
 public class StockItem 
 {
-    private String name = "UNKNOWN";
-    private Integer quantityInStock = 0;
-    private Double sellingPrice = 1000000.0;
-    private Double costPrice = 1000000.0;
+    protected String name = "UNKNOWN";
+    protected Integer quantityInStock = 0;
+    protected Double sellingPrice = 1000000.0;
+    protected Double costPrice = 1000000.0;
 
     public String getName() {
         return name;
@@ -59,6 +59,16 @@ public class StockItem
         {
             this.costPrice = costPrice;
         }
+    }
+    
+    public Boolean isInStock()
+    {
+        Boolean inStock = false;
+        if(this.quantityInStock > 0)
+        {
+            inStock = true;
+        }
+        return inStock;
     }
     
     
