@@ -5,6 +5,7 @@
  */
 package stocktracker;
 
+import stocktracker.StockDataModel.AnObserver;
 import stocktracker.StockDataModel.PhysicalStockItem;
 import stocktracker.StockDataModel.ServiceStockItem;
 import stocktracker.StockDataModel.StockType;
@@ -39,39 +40,54 @@ public class StockTracker {
 //        System.out.println(StrMessage);
 
 
-            // WEEK 05 MAIN 
-            StockItem objTestItem1 = new PhysicalStockItem("Starcraft manual");
-            StockItem objTestItem2 = new PhysicalStockItem("Halo 3", 100);
-            StockItem objTestItem3 = new ServiceStockItem("Delivery");
+//            // WEEK 05 MAIN TESTING THE ENUM
+//            StockItem objTestItem1 = new PhysicalStockItem("Starcraft manual");
+//            StockItem objTestItem2 = new PhysicalStockItem("Halo 3", 100);
+//            StockItem objTestItem3 = new ServiceStockItem("Delivery");
+//            
+//            //print type for each of these to console
+//            if(objTestItem1.getItemType() == StockType.PHYSICALITEM)
+//            {
+//                System.out.println("Item 1 is a PHYSICAL stock item");
+//            }
+//            else
+//            {
+//                System.out.println("Item 1 is a SERVICE stock item");
+//            }
+//            
+//            if(objTestItem2.getItemType() == StockType.PHYSICALITEM)
+//            {
+//                System.out.println("Item 2 is a PHYSICAL stock item");
+//            }
+//            else
+//            {
+//                System.out.println("Item 2 is a SERVICE stock item");
+//            }
+//            
+//            if(objTestItem3.getItemType() == StockType.PHYSICALITEM)
+//            {
+//                System.out.println("Item 3 is a PHYSICAL stock item");
+//            }
+//            else
+//            {
+//                System.out.println("Item 3 is a SERVICE stock item");
+//            }
             
-            //print type for each of these to console
-            if(objTestItem1.getItemType() == StockType.PHYSICALITEM)
-            {
-                System.out.println("Item 1 is a PHYSICAL stock item");
-            }
-            else
-            {
-                System.out.println("Item 1 is a SERVICE stock item");
-            }
+            // TESTING OBSERVER DEISGN PATTERN
+            StockItem PhysTestItem = new PhysicalStockItem("Halo 3", 100);
+            StockItem ServTestItem = new ServiceStockItem("Delivery");
+            AnObserver testObserver = new AnObserver();
             
-            if(objTestItem2.getItemType() == StockType.PHYSICALITEM)
-            {
-                System.out.println("Item 2 is a PHYSICAL stock item");
-            }
-            else
-            {
-                System.out.println("Item 2 is a SERVICE stock item");
-            }
+            PhysTestItem.registerObserver(testObserver);
+            ServTestItem.registerObserver(testObserver);
             
-            if(objTestItem3.getItemType() == StockType.PHYSICALITEM)
-            {
-                System.out.println("Item 3 is a PHYSICAL stock item");
-            }
-            else
-            {
-                System.out.println("Item 3 is a SERVICE stock item");
-            }
+            System.out.println("Changiung quantity of physical stock item");
             
+            PhysTestItem.setQuantityInStock(3);
+            
+            System.out.println("Changing price of service stock item");
+            
+            ServTestItem.setSellingPrice(12.00);
             
 
 
