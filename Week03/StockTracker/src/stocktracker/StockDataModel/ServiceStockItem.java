@@ -32,5 +32,11 @@ public class ServiceStockItem extends StockItem
         return true;
     }
     
+    @Override
+    public StockType getItemType()
+    {
+        return StockType.SERVICEITEM;
+    }
+    
     
 }

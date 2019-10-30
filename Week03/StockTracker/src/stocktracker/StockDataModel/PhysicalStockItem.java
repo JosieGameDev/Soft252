@@ -26,5 +26,10 @@ public class PhysicalStockItem extends StockItem
         super(name, qty);
     }
     
+    @Override
+    public StockType getItemType()
+    {
+        return StockType.PHYSICALITEM;
+    }
     
 }

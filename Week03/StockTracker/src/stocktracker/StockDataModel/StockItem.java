@@ -9,13 +9,33 @@ package stocktracker.StockDataModel;
  *
  * @author jwood20
  */
-public class StockItem 
+public abstract class StockItem 
 {
     protected String name = "UNKNOWN";
     protected Integer quantityInStock = 0;
     protected Double sellingPrice = 1000000.0;
     protected Double costPrice = 1000000.0;
 
+    // add constructors
+    public StockItem()
+    {
+        
+    }
+    
+    public StockItem(String name)
+    {
+        this.name = name;
+    }
+    
+    public StockItem(String name, Integer qty)
+    {
+        this.name = name;
+        this.quantityInStock = qty;
+    }
+     //retrieve item type
+    
+    public abstract StockType getItemType();
+    
     public String getName() {
         return name;
     }
